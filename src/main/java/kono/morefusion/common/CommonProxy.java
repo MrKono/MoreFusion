@@ -1,8 +1,9 @@
 package kono.morefusion.common;
 
-import kono.morefusion.common.data.MoreFusionRegistration;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+
+import kono.morefusion.common.data.MoreFusionRegistration;
 
 public class CommonProxy {
 

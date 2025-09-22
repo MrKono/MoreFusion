@@ -1,6 +1,7 @@
 package kono.morefusion.api;
 
 import net.minecraft.resources.ResourceLocation;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,5 +16,4 @@ public class MoreFusionValues {
     public static ResourceLocation mrId(String name) {
         return new ResourceLocation(MODID, name);
     }
-
 }
