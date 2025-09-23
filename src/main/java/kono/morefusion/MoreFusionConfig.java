@@ -34,19 +34,235 @@ public class MoreFusionConfig {
     @Configurable
     public cfgMk7 mk7 = new cfgMk7();
 
-    public static class cfgMk0 {}
+    public static class cfgMk0 {
 
-    public static class cfgMk1 {}
+        @Configurable
+        @Configurable.Comment({ "Configure the minimum tier of the Energy Hatch used in Fusion Reactor Mk0.",
+                "Tiers: 0 = ULV, 1 = LV, 2 = MV ... 12 = UXV, 13 = OpV, 14 = MAX", "Default: 5 (IV)" })
+        @Configurable.Range(min = 0, max = 14)
+        public int tierMk0 = 5;
 
-    public static class cfgMk2 {}
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Base Heat value\" of Fusion Reactor Mk0.",
+                "Calculation formula: Heat = baseHeatMk0 * energyHatchAmount", "Default: 5000000" })
+        public String heatMk0 = "5000000";
 
-    public static class cfgMk3 {}
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Casing\" used for building Fusion Reactor Mk0.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String casingMk0 = "";
 
-    public static class cfgMk4 {}
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Glass\" used for building Fusion Reactor Mk0.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String glassMk0 = "";
 
-    public static class cfgMk5 {}
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk0.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String coilMk0 = "";
+    }
 
-    public static class cfgMk6 {}
+    public static class cfgMk1 {
 
-    public static class cfgMk7 {}
+        @Configurable
+        @Configurable.Comment({ "Configure the minimum tier of the Energy Hatch used in Fusion Reactor Mk1.",
+                "Tiers: 0 = ULV, 1 = LV, 2 = MV ... 12 = UXV, 13 = OpV, 14 = MAX", "Default: 6 (LuV)" })
+        @Configurable.Range(min = 0, max = 14)
+        public int tierMk1 = 6;
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Base Heat value\" of Fusion Reactor Mk1.",
+                "Calculation formula: Heat = baseHeatMk1 * energyHatchAmount", "Default: 10000000" })
+        public String heatMk1 = "10000000";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Casing\" used for building Fusion Reactor Mk1.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String casingMk1 = "";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Glass\" used for building Fusion Reactor Mk1.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String glassMk1 = "";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk1.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String coilMk1 = "";
+    }
+
+    public static class cfgMk2 {
+
+        @Configurable
+        @Configurable.Comment({ "Configure the minimum tier of the Energy Hatch used in Fusion Reactor Mk2.",
+                "Tiers: 0 = ULV, 1 = LV, 2 = MV ... 12 = UXV, 13 = OpV, 14 = MAX", "Default: 7 (ZPM)" })
+        @Configurable.Range(min = 0, max = 14)
+        public int tierMk2 = 7;
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Base Heat value\" of Fusion Reactor Mk2.",
+                "Calculation formula: Heat = baseHeatMk2 * energyHatchAmount", "Default: 20000000" })
+        public String heatMk2 = "20000000";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Casing\" used for building Fusion Reactor Mk2.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String casingMk2 = "";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Glass\" used for building Fusion Reactor Mk2.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String glassMk2 = "";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk2.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String coilMk2 = "";
+    }
+
+    public static class cfgMk3 {
+
+        @Configurable
+        @Configurable.Comment({ "Configure the minimum tier of the Energy Hatch used in Fusion Reactor Mk3.",
+                "Tiers: 0 = ULV, 1 = LV, 2 = MV ... 12 = UXV, 13 = OpV, 14 = MAX", "Default: 8 (UV)" })
+        @Configurable.Range(min = 0, max = 14)
+        public int tierMk3 = 8;
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Base Heat value\" of Fusion Reactor Mk3.",
+                "Calculation formula: Heat = baseHeatMk3 * energyHatchAmount", "Default: 40000000" })
+        public String heatMk3 = "40000000";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Casing\" used for building Fusion Reactor Mk3.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String casingMk3 = "";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Glass\" used for building Fusion Reactor Mk3.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String glassMk3 = "";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk3.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String coilMk3 = "";
+    }
+
+    public static class cfgMk4 {
+
+        @Configurable
+        @Configurable.Comment({ "Configure the minimum tier of the Energy Hatch used in Fusion Reactor Mk4.",
+                "Tiers: 0 = ULV, 1 = LV, 2 = MV ... 12 = UXV, 13 = OpV, 14 = MAX", "Default: 9 (UHV)" })
+        @Configurable.Range(min = 0, max = 14)
+        public int tierMk4 = 9;
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Base Heat value\" of Fusion Reactor Mk4.",
+                "Calculation formula: Heat = baseHeatMk4 * energyHatchAmount", "Default: 80000000" })
+        public String heatMk4 = "80000000";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Casing\" used for building Fusion Reactor Mk4.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String casingMk4 = "";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Glass\" used for building Fusion Reactor Mk4.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String glassMk4 = "";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk4.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String coilMk4 = "";
+    }
+
+    public static class cfgMk5 {
+
+        @Configurable
+        @Configurable.Comment({ "Configure the minimum tier of the Energy Hatch used in Fusion Reactor Mk5.",
+                "Tiers: 0 = ULV, 1 = LV, 2 = MV ... 12 = UXV, 13 = OpV, 14 = MAX", "Default: 10 (UEV)" })
+        @Configurable.Range(min = 0, max = 14)
+        public int tierMk5 = 10;
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Base Heat value\" of Fusion Reactor Mk5.",
+                "Calculation formula: Heat = baseHeatMk5 * energyHatchAmount", "Default: 160000000" })
+        public String heatMk5 = "160000000";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Casing\" used for building Fusion Reactor Mk5.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String casingMk5 = "";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Glass\" used for building Fusion Reactor Mk5.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String glassMk5 = "";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk5.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String coilMk5 = "";
+    }
+
+    public static class cfgMk6 {
+
+        @Configurable
+        @Configurable.Comment({ "Configure the minimum tier of the Energy Hatch used in Fusion Reactor Mk6.",
+                "Tiers: 0 = ULV, 1 = LV, 2 = MV ... 12 = UXV, 13 = OpV, 14 = MAX", "Default: 11 (UIV)" })
+        @Configurable.Range(min = 0, max = 14)
+        public int tierMk6 = 11;
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Base Heat value\" of Fusion Reactor Mk6.",
+                "Calculation formula: Heat = baseHeatMk6 * energyHatchAmount", "Default: 320000000" })
+        public String heatMk6 = "320000000";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Casing\" used for building Fusion Reactor Mk6.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String casingMk6 = "";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Glass\" used for building Fusion Reactor Mk6.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String glassMk6 = "";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk6.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String coilMk6 = "";
+    }
+
+    public static class cfgMk7 {
+
+        @Configurable
+        @Configurable.Comment({ "Configure the minimum tier of the Energy Hatch used in Fusion Reactor Mk7.",
+                "Tiers: 0 = ULV, 1 = LV, 2 = MV ... 12 = UXV, 13 = OpV, 14 = MAX", "Default: 12 (OpV)" })
+        @Configurable.Range(min = 0, max = 14)
+        public int tierMk7 = 12;
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Base Heat value\" of Fusion Reactor Mk7.",
+                "Calculation formula: Heat = baseHeatMk7 * energyHatchAmount", "Default: 640000000" })
+        public String heatMk7 = "640000000";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Casing\" used for building Fusion Reactor Mk7.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String casingMk7 = "";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Glass\" used for building Fusion Reactor Mk7.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String glassMk7 = "";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk7.", "Format: modid:name",
+                "Default: mymod:myblock" })
+        public String coilMk7 = "";
+    }
 }
