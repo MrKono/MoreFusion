@@ -13,8 +13,9 @@ public class MoreFusionConfig {
     public static MoreFusionConfig INSTANCE;
 
     public static void init() {
-        INSTANCE = Configuration.registerConfig(MoreFusionConfig.class, ConfigFormats.yaml())
-                .getConfigInstance();
+        if (INSTANCE == null) {
+            INSTANCE = Configuration.registerConfig(MoreFusionConfig.class, ConfigFormats.yaml()).getConfigInstance();
+        }
     }
 
     @Configurable
@@ -61,6 +62,11 @@ public class MoreFusionConfig {
         @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk0.", "Format: modid:name",
                 "Default: gtceu:naquadah_coil_block" })
         public String coilMk0 = "gtceu:naquadah_coil_block";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Casing Model\" used dor Fusion Reactor Mk0", "Format: modid:path",
+                "If empty, model is applied to default casing's texture.", "Default: " })
+        public String modelMk0 = " ";
     }
 
     public static class cfgMk1 {
@@ -90,6 +96,11 @@ public class MoreFusionConfig {
         @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk1.", "Format: modid:name",
                 "Default: gtceu:superconducting_coil" })
         public String coilMk1 = "gtceu:superconducting_coil";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Casing Model\" used dor Fusion Reactor Mk1", "Format: modid:path",
+                "If empty, model is applied to default casing's texture.", "Default: " })
+        public String modelMk1 = " ";
     }
 
     public static class cfgMk2 {
@@ -119,6 +130,11 @@ public class MoreFusionConfig {
         @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk2.", "Format: modid:name",
                 "Default: gtceu:fusion_coil" })
         public String coilMk2 = "gtceu:fusion_coil";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Casing Model\" used dor Fusion Reactor Mk2", "Format: modid:path",
+                "If empty, model is applied to default casing's texture.", "Default: " })
+        public String modelMk2 = " ";
     }
 
     public static class cfgMk3 {
@@ -148,6 +164,11 @@ public class MoreFusionConfig {
         @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk3.", "Format: modid:name",
                 "Default: gtceu:fusion_coil" })
         public String coilMk3 = "gtceu:fusion_coil";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Casing Model\" used dor Fusion Reactor Mk3", "Format: modid:path",
+                "If empty, model is applied to default casing's texture.", "Default: " })
+        public String modelMk3 = " ";
     }
 
     public static class cfgMk4 {
@@ -177,6 +198,11 @@ public class MoreFusionConfig {
         @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk4.", "Format: modid:name",
                 "Default: gtceu:fusion_coil" })
         public String coilMk4 = "gtceu:fusion_coil";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Casing Model\" used dor Fusion Reactor Mk4", "Format: modid:path",
+                "If empty, model is applied to default casing's texture.", "Default: " })
+        public String modelMk4 = " ";
     }
 
     public static class cfgMk5 {
@@ -206,6 +232,11 @@ public class MoreFusionConfig {
         @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk5.", "Format: modid:name",
                 "Default: gtceu:fusion_coil" })
         public String coilMk5 = "gtceu:fusion_coil";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Casing Model\" used dor Fusion Reactor Mk5", "Format: modid:path",
+                "If empty, model is applied to default casing's texture.", "Default: " })
+        public String modelMk5 = " ";
     }
 
     public static class cfgMk6 {
@@ -235,6 +266,11 @@ public class MoreFusionConfig {
         @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk6.", "Format: modid:name",
                 "Default: gtceu:fusion_coil" })
         public String coilMk6 = "gtceu:fusion_coil";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Casing Model\" used dor Fusion Reactor Mk6", "Format: modid:path",
+                "If empty, model is applied to default casing's texture.", "Default: " })
+        public String modelMk6 = " ";
     }
 
     public static class cfgMk7 {
@@ -264,5 +300,10 @@ public class MoreFusionConfig {
         @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk7.", "Format: modid:name",
                 "Default: gtceu:fusion_coil" })
         public String coilMk7 = "gtceu:fusion_coil";
+
+        @Configurable
+        @Configurable.Comment({ "Configure the \"Casing Model\" used dor Fusion Reactor Mk7", "Format: modid:path",
+                "If empty, model is applied to default casing's texture.", "Default: " })
+        public String modelMk7 = " ";
     }
 }

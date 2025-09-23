@@ -27,7 +27,7 @@ public class MoreFusionUtils {
             }
             return Math.min(value, MAX_SAFE);
         } catch (NumberFormatException e) {
-            MoreFusionUtils.LOGGER.error("failed to parse baseHeat from {}, set to default value: {}", str,
+            MoreFusionUtils.LOGGER.error("Failed to parse baseHeat from {}. Applied default value: {}", str,
                     defaultValue);
             return defaultValue;
         }
@@ -43,14 +43,14 @@ public class MoreFusionUtils {
             Block block = ForgeRegistries.BLOCKS.getValue(rl);
 
             if (block == null || block == Blocks.AIR) {
-                MoreFusionUtils.LOGGER.error("failed to get Block '{}'. Set to default '{}'", str, df);
+                MoreFusionUtils.LOGGER.error("Failed to get Block '{}'. Applied to default '{}'", str, df);
                 return defaultBlock;
             }
             return block;
 
         } catch (Exception e) {
             MoreFusionUtils.LOGGER
-                    .error("failed to get Block '{}'. Invalid format or not registered. Set to default '{}'", str, df);
+                    .error("'{}' was invalid format or not registered. Applied to default '{}'", str, df);
             return defaultBlock;
         }
     }
@@ -65,5 +65,25 @@ public class MoreFusionUtils {
 
     public static int tierMoreFusion(int i, int defaultValue) {
         return rangeCheck(GTValues.ULV, GTValues.MAX, i, defaultValue);
+    }
+
+    public static ResourceLocation getResourceLocation(String str, ResourceLocation defaultPath) {
+        if (str == null || str.isEmpty()) {
+            LOGGER.error("ResourceLocation was empty. Applied default: '{}'.", defaultPath);
+            return defaultPath;
+        }
+
+        try {
+            String[] parts = str.trim().split(":", 2);
+            if (parts.length == 2) {
+                return new ResourceLocation(parts[0], parts[1]);
+            } else {
+                LOGGER.error("'{}' was invalid format. Applied to default: '{}'.", str, defaultPath);
+                return defaultPath;
+            }
+        } catch (Exception e) {
+            LOGGER.error("Failed to accept: '{}'. Applied to default: {}.", str, defaultPath);
+            return defaultPath;
+        }
     }
 }
