@@ -49,18 +49,18 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Casing\" used for building Fusion Reactor Mk0.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String casingMk0 = "";
+                "Default: gtceu:high_temperature_smelting_casing" })
+        public String casingMk0 = "gtceu:high_temperature_smelting_casing";
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Glass\" used for building Fusion Reactor Mk0.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String glassMk0 = "";
+                "Default: gtceu:laminated_glass" })
+        public String glassMk0 = "gtceu:laminated_glass";
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk0.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String coilMk0 = "";
+                "Default: gtceu:naquadah_coil_block" })
+        public String coilMk0 = "gtceu:naquadah_coil_block";
     }
 
     public static class cfgMk1 {
@@ -78,18 +78,18 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Casing\" used for building Fusion Reactor Mk1.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String casingMk1 = "";
+                "Default: gtceu:fusion_casing" })
+        public String casingMk1 = "gtceu:fusion_casing";
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Glass\" used for building Fusion Reactor Mk1.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String glassMk1 = "";
+                "Default: gtceu:fusion_glass" })
+        public String glassMk1 = "gtceu:fusion_glass";
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk1.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String coilMk1 = "";
+                "Default: gtceu:superconducting_coil" })
+        public String coilMk1 = "gtceu:superconducting_coil";
     }
 
     public static class cfgMk2 {
@@ -107,18 +107,18 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Casing\" used for building Fusion Reactor Mk2.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String casingMk2 = "";
+                "Default: gtceu:fusion_casing_mk2" })
+        public String casingMk2 = "gtceu:fusion_casing_mk2";
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Glass\" used for building Fusion Reactor Mk2.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String glassMk2 = "";
+                "Default: gtceu:fusion_glass" })
+        public String glassMk2 = "gtceu:fusion_glass";
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk2.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String coilMk2 = "";
+                "Default: gtceu:fusion_coil" })
+        public String coilMk2 = "gtceu:fusion_coil";
     }
 
     public static class cfgMk3 {
@@ -136,18 +136,18 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Casing\" used for building Fusion Reactor Mk3.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String casingMk3 = "";
+                "Default: gtceu:fusion_casing_mk3" })
+        public String casingMk3 = "gtceu:fusion_casing_mk3";
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Glass\" used for building Fusion Reactor Mk3.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String glassMk3 = "";
+                "Default: gtceu:fusion_glass" })
+        public String glassMk3 = "gtceu:fusion_glass";
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk3.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String coilMk3 = "";
+                "Default: gtceu:fusion_coil" })
+        public String coilMk3 = "gtceu:fusion_coil";
     }
 
     public static class cfgMk4 {
@@ -165,18 +165,18 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Casing\" used for building Fusion Reactor Mk4.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String casingMk4 = "";
+                "Default: gtceu:atomic_casing" })
+        public String casingMk4 = "gtceu:atomic_casing";
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Glass\" used for building Fusion Reactor Mk4.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String glassMk4 = "";
+                "Default: gtceu:fusion_glass" })
+        public String glassMk4 = "gtceu:fusion_glass";
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk4.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String coilMk4 = "";
+                "Default: gtceu:fusion_coil" })
+        public String coilMk4 = "gtceu:fusion_coil";
     }
 
     public static class cfgMk5 {
@@ -194,18 +194,18 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Casing\" used for building Fusion Reactor Mk5.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String casingMk5 = "";
+                "Default: gtceu:atomic_casing" })
+        public String casingMk5 = "gtceu:atomic_casing";
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Glass\" used for building Fusion Reactor Mk5.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String glassMk5 = "";
+                "Default: gtceu:fusion_glass" })
+        public String glassMk5 = "gtceu:fusion_glass";
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk5.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String coilMk5 = "";
+                "Default: gtceu:fusion_coil" })
+        public String coilMk5 = "gtceu:fusion_coil";
     }
 
     public static class cfgMk6 {
@@ -223,25 +223,25 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Casing\" used for building Fusion Reactor Mk6.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String casingMk6 = "";
+                "Default: gtceu:atomic_casing" })
+        public String casingMk6 = "gtceu:atomic_casing";
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Glass\" used for building Fusion Reactor Mk6.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String glassMk6 = "";
+                "Default: gtceu:fusion_glass" })
+        public String glassMk6 = "gtceu:fusion_glass";
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk6.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String coilMk6 = "";
+                "Default: gtceu:fusion_coil" })
+        public String coilMk6 = "gtceu:fusion_coil";
     }
 
     public static class cfgMk7 {
 
         @Configurable
         @Configurable.Comment({ "Configure the minimum tier of the Energy Hatch used in Fusion Reactor Mk7.",
-                "Tiers: 0 = ULV, 1 = LV, 2 = MV ... 12 = UXV, 13 = OpV, 14 = MAX", "Default: 12 (OpV)" })
+                "Tiers: 0 = ULV, 1 = LV, 2 = MV ... 12 = UXV, 13 = OpV, 14 = MAX", "Default: 12 (UXV)" })
         @Configurable.Range(min = 0, max = 14)
         public int tierMk7 = 12;
 
@@ -252,17 +252,17 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Casing\" used for building Fusion Reactor Mk7.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String casingMk7 = "";
+                "Default: gtceu:atomic_casing" })
+        public String casingMk7 = "gtceu:atomic_casing";
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Glass\" used for building Fusion Reactor Mk7.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String glassMk7 = "";
+                "Default: gtceu:fusion_glass" })
+        public String glassMk7 = "gtceu:fusion_glass";
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Coil\" used for building Fusion Reactor Mk7.", "Format: modid:name",
-                "Default: mymod:myblock" })
-        public String coilMk7 = "";
+                "Default: gtceu:fusion_coil" })
+        public String coilMk7 = "gtceu:fusion_coil";
     }
 }

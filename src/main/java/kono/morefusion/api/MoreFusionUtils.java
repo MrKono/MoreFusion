@@ -8,6 +8,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.gregtechceu.gtceu.api.GTValues;
+
+import static com.gregtechceu.gtceu.api.GTValues.ULV;
+
 public class MoreFusionUtils {
 
     public static final Logger LOGGER = LoggerFactory.getLogger(MoreFusionValues.NAME);
@@ -49,5 +53,17 @@ public class MoreFusionUtils {
                     .error("failed to get Block '{}'. Invalid format or not registered. Set to default '{}'", str, df);
             return defaultBlock;
         }
+    }
+
+    public static int rangeCheck(int min, int max, int i, int defaultValue) {
+        if (min <= i || i <= max) {
+            return i;
+        } else {
+            return defaultValue;
+        }
+    }
+
+    public static int tierMoreFusion(int i, int defaultValue) {
+        return rangeCheck(GTValues.ULV, GTValues.MAX, i, defaultValue);
     }
 }
