@@ -6,16 +6,16 @@
     }
   ],
   "loader": "gtceu:machine",
-  "machine": "morefusion:ulv_fusion_reactor_mf",
+  "machine": "morefusion:uiv_fusion_reactor_mf",
   "texture_overrides": {
-    "all": "gtceu:block/casings/gcym/high_temperature_smelting_casing"
+    "all": "gtceu:block/casings/gcym/atomic_casing"
   },
   "variants": {
     "is_formed=false,recipe_logic_status=idle": {
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/gcym/high_temperature_smelting_casing",
+          "all": "gtceu:block/casings/gcym/atomic_casing",
           "overlay_front": "gtceu:block/multiblock/fusion_reactor/overlay_front",
           "overlay_front_emissive": "gtceu:block/multiblock/fusion_reactor/overlay_front_emissive"
         }
@@ -25,7 +25,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/gcym/high_temperature_smelting_casing",
+          "all": "gtceu:block/casings/gcym/atomic_casing",
           "overlay_front": "gtceu:block/multiblock/fusion_reactor/overlay_front",
           "overlay_front_emissive": "gtceu:block/multiblock/fusion_reactor/overlay_front_emissive"
         }
@@ -35,7 +35,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/gcym/high_temperature_smelting_casing",
+          "all": "gtceu:block/casings/gcym/atomic_casing",
           "overlay_front": "gtceu:block/multiblock/fusion_reactor/overlay_front_active",
           "overlay_front_emissive": "gtceu:block/multiblock/fusion_reactor/overlay_front_active_emissive"
         }
@@ -45,7 +45,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/gcym/high_temperature_smelting_casing",
+          "all": "gtceu:block/casings/gcym/atomic_casing",
           "overlay_front": "gtceu:block/multiblock/fusion_reactor/overlay_front_active",
           "overlay_front_emissive": "gtceu:block/multiblock/fusion_reactor/overlay_front_active_emissive"
         }
@@ -55,7 +55,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/gcym/high_temperature_smelting_casing",
+          "all": "gtceu:block/casings/gcym/atomic_casing",
           "overlay_front": "gtceu:block/multiblock/fusion_reactor/overlay_front",
           "overlay_front_emissive": "gtceu:block/multiblock/fusion_reactor/overlay_front_emissive"
         }
@@ -65,7 +65,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/gcym/high_temperature_smelting_casing",
+          "all": "gtceu:block/casings/gcym/atomic_casing",
           "overlay_front": "gtceu:block/multiblock/fusion_reactor/overlay_front",
           "overlay_front_emissive": "gtceu:block/multiblock/fusion_reactor/overlay_front_emissive"
         }
@@ -75,7 +75,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/gcym/high_temperature_smelting_casing",
+          "all": "gtceu:block/casings/gcym/atomic_casing",
           "overlay_front": "gtceu:block/multiblock/fusion_reactor/overlay_front_active",
           "overlay_front_emissive": "gtceu:block/multiblock/fusion_reactor/overlay_front_active_emissive"
         }
@@ -85,7 +85,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/gcym/high_temperature_smelting_casing",
+          "all": "gtceu:block/casings/gcym/atomic_casing",
           "overlay_front": "gtceu:block/multiblock/fusion_reactor/overlay_front_active",
           "overlay_front_emissive": "gtceu:block/multiblock/fusion_reactor/overlay_front_active_emissive"
         }

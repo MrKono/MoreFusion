@@ -1,10 +1,10 @@
 {
-  "block.morefusion.ev_fusion_reactor_mf": "Ev Fusion Reactor Mf",
-  "block.morefusion.hv_fusion_reactor_mf": "Hv Fusion Reactor Mf",
   "block.morefusion.iv_fusion_reactor_mf": "Iv Fusion Reactor Mf",
   "block.morefusion.luv_fusion_reactor_mf": "Luv Fusion Reactor Mf",
-  "block.morefusion.lv_fusion_reactor_mf": "Lv Fusion Reactor Mf",
-  "block.morefusion.mv_fusion_reactor_mf": "Mv Fusion Reactor Mf",
-  "block.morefusion.ulv_fusion_reactor_mf": "Ulv Fusion Reactor Mf",
+  "block.morefusion.uev_fusion_reactor_mf": "Uev Fusion Reactor Mf",
+  "block.morefusion.uhv_fusion_reactor_mf": "Uhv Fusion Reactor Mf",
+  "block.morefusion.uiv_fusion_reactor_mf": "Uiv Fusion Reactor Mf",
+  "block.morefusion.uv_fusion_reactor_mf": "Uv Fusion Reactor Mf",
+  "block.morefusion.uxv_fusion_reactor_mf": "Uxv Fusion Reactor Mf",
   "block.morefusion.zpm_fusion_reactor_mf": "Zpm Fusion Reactor Mf"
 }

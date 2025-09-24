@@ -6,7 +6,7 @@
     }
   ],
   "loader": "gtceu:machine",
-  "machine": "morefusion:hv_fusion_reactor_mf",
+  "machine": "morefusion:uv_fusion_reactor_mf",
   "texture_overrides": {
     "all": "gtceu:block/casings/fusion/fusion_casing_mk3"
   },

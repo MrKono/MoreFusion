@@ -6,7 +6,7 @@
     }
   ],
   "loader": "gtceu:machine",
-  "machine": "morefusion:ev_fusion_reactor_mf",
+  "machine": "morefusion:uxv_fusion_reactor_mf",
   "texture_overrides": {
     "all": "gtceu:block/casings/gcym/atomic_casing"
   },

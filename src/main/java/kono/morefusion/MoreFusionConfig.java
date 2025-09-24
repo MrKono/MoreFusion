@@ -65,8 +65,9 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Casing Model\" used dor Fusion Reactor Mk0", "Format: modid:path",
-                "If empty, model is applied to default casing's texture.", "Default: " })
-        public String modelMk0 = " ";
+                "If empty, model is applied to default casing's texture.",
+                "Default: gtceu:block/casings/gcym/high_temperature_smelting_casing" })
+        public String modelMk0 = "gtceu:block/casings/gcym/high_temperature_smelting_casing";
     }
 
     public static class cfgMk1 {
@@ -99,8 +100,9 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Casing Model\" used dor Fusion Reactor Mk1", "Format: modid:path",
-                "If empty, model is applied to default casing's texture.", "Default: " })
-        public String modelMk1 = " ";
+                "If empty, model is applied to default casing's texture.",
+                "Default: gtceu:block/casings/fusion/fusion_casing" })
+        public String modelMk1 = "gtceu:block/casings/fusion/fusion_casing";
     }
 
     public static class cfgMk2 {
@@ -133,8 +135,9 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Casing Model\" used dor Fusion Reactor Mk2", "Format: modid:path",
-                "If empty, model is applied to default casing's texture.", "Default: " })
-        public String modelMk2 = " ";
+                "If empty, model is applied to default casing's texture.",
+                "Default: gtceu:block/casings/fusion/fusion_casing_mk2" })
+        public String modelMk2 = "gtceu:block/casings/fusion/fusion_casing_mk2";
     }
 
     public static class cfgMk3 {
@@ -167,8 +170,9 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Casing Model\" used dor Fusion Reactor Mk3", "Format: modid:path",
-                "If empty, model is applied to default casing's texture.", "Default: " })
-        public String modelMk3 = " ";
+                "If empty, model is applied to default casing's texture.",
+                "Default: gtceu:block/casings/fusion/fusion_casing_mk3" })
+        public String modelMk3 = "gtceu:block/casings/fusion/fusion_casing_mk3";
     }
 
     public static class cfgMk4 {
@@ -201,8 +205,9 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Casing Model\" used dor Fusion Reactor Mk4", "Format: modid:path",
-                "If empty, model is applied to default casing's texture.", "Default: " })
-        public String modelMk4 = " ";
+                "If empty, model is applied to default casing's texture.",
+                "Default: gtceu:block/casings/gcym/atomic_casing" })
+        public String modelMk4 = "gtceu:block/casings/gcym/atomic_casing";
     }
 
     public static class cfgMk5 {
@@ -235,8 +240,9 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Casing Model\" used dor Fusion Reactor Mk5", "Format: modid:path",
-                "If empty, model is applied to default casing's texture.", "Default: " })
-        public String modelMk5 = " ";
+                "If empty, model is applied to default casing's texture.",
+                "Default: gtceu:block/casings/gcym/atomic_casing" })
+        public String modelMk5 = "gtceu:block/casings/gcym/atomic_casing";
     }
 
     public static class cfgMk6 {
@@ -269,8 +275,9 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Casing Model\" used dor Fusion Reactor Mk6", "Format: modid:path",
-                "If empty, model is applied to default casing's texture.", "Default: " })
-        public String modelMk6 = " ";
+                "If empty, model is applied to default casing's texture.",
+                "Default: gtceu:block/casings/gcym/atomic_casing" })
+        public String modelMk6 = "gtceu:block/casings/gcym/atomic_casing";
     }
 
     public static class cfgMk7 {
@@ -303,7 +310,8 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Casing Model\" used dor Fusion Reactor Mk7", "Format: modid:path",
-                "If empty, model is applied to default casing's texture.", "Default: " })
-        public String modelMk7 = " ";
+                "If empty, model is applied to default casing's texture.",
+                "Default: gtceu:block/casings/gcym/atomic_casing" })
+        public String modelMk7 = "gtceu:block/casings/gcym/atomic_casing";
     }
 }
