@@ -9,11 +9,17 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 
+import org.jetbrains.annotations.NotNull;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
+import com.gregtechceu.gtceu.api.machine.MetaMachine;
+import com.gregtechceu.gtceu.api.machine.trait.NotifiableEnergyContainer;
 import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.api.recipe.RecipeHelper;
+import com.gregtechceu.gtceu.api.recipe.modifier.ModifierFunction;
+import com.gregtechceu.gtceu.api.recipe.modifier.RecipeModifier;
 import com.gregtechceu.gtceu.common.block.FusionCasingBlock;
 import com.gregtechceu.gtceu.common.data.GCYMBlocks;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
@@ -22,6 +28,7 @@ import com.gregtechceu.gtceu.utils.FormattingUtil;
 
 import com.lowdragmc.lowdraglib.gui.widget.LabelWidget;
 import com.lowdragmc.lowdraglib.gui.widget.WidgetGroup;
+import com.lowdragmc.lowdraglib.syncdata.annotation.Persisted;
 import com.lowdragmc.lowdraglib.utils.LocalizationUtils;
 
 import kono.morefusion.api.MoreFusionUtils;
@@ -44,6 +51,11 @@ public class ConfigurableFusionReactorMachine extends FusionReactorMachine {
     private final int mk;
     private final int effTier;
 
+    @Persisted
+    protected long heat = 0;
+    @Persisted
+    protected final NotifiableEnergyContainer energyContainer;
+
     // Max EU -> Tier map, used to find minimum tier needed for X EU to start
     private static final Long2IntSortedMap FUSION_ENERGY = new Long2IntAVLTreeMap();
     // Tier -> Suffix map, i.e. LuV -> MKI
@@ -55,6 +67,7 @@ public class ConfigurableFusionReactorMachine extends FusionReactorMachine {
         super(holder, Math.max(0, idTier - IV));
         this.mk = Math.max(0, idTier - GTValues.IV);
         this.effTier = getFusionTier(mk);
+        this.energyContainer = createEnergyContainer();
     }
 
     public static int getFusionTier(int mk) {
@@ -62,8 +75,40 @@ public class ConfigurableFusionReactorMachine extends FusionReactorMachine {
     }
 
     @Override
+    public int getTier() {
+        return effTier;
+    }
+
+    @Override
     public long getMaxVoltage() {
         return Math.min(GTValues.V[effTier], super.getMaxVoltage());
+    }
+
+    public static ModifierFunction recipeModifier(@NotNull MetaMachine machine, @NotNull GTRecipe recipe) {
+        if (!(machine instanceof ConfigurableFusionReactorMachine fusionReactorMachine)) {
+            return RecipeModifier.nullWrongType(FusionReactorMachine.class, machine);
+        }
+        if (RecipeHelper.getRecipeEUtTier(recipe) > fusionReactorMachine.getTier() ||
+                !recipe.data.contains("eu_to_start") ||
+                recipe.data.getLong("eu_to_start") > fusionReactorMachine.energyContainer.getEnergyCapacity()) {
+            return ModifierFunction.NULL;
+        }
+
+        long heatDiff = recipe.data.getLong("eu_to_start") - fusionReactorMachine.heat;
+
+        // if the stored heat is >= required energy, recipe is okay to run
+        if (heatDiff <= 0) {
+            return FUSION_OC.getModifier(machine, recipe, fusionReactorMachine.getMaxVoltage(), false);
+        }
+        // if the remaining energy needed is more than stored, do not run
+        if (fusionReactorMachine.energyContainer.getEnergyStored() < heatDiff) return ModifierFunction.NULL;
+
+        // remove the energy needed
+        fusionReactorMachine.energyContainer.removeEnergy(heatDiff);
+        // increase the stored heat
+        fusionReactorMachine.heat += heatDiff;
+        fusionReactorMachine.updatePreHeatSubscription();
+        return FUSION_OC.getModifier(machine, recipe, fusionReactorMachine.getMaxVoltage(), false);
     }
 
     //////////////////////////////////////
@@ -110,11 +155,12 @@ public class ConfigurableFusionReactorMachine extends FusionReactorMachine {
         return FUSION_ENERGY.get(key);
     }
 
-    public static void registerFusionTier(int mk, String name) {
+    public static void registerFusionTier(int mk, @NotNull String name) {
+        int effTier = getFusionTier(mk);
         long maxEU = calculateEnergyStorageFactor(mk, 16);
-        FUSION_ENERGY.put(maxEU, mk);
-        FUSION_NAMES.put(mk, name);
-        MINIMUM_TIER = Math.min(mk, MINIMUM_TIER);
+        FUSION_ENERGY.put(maxEU, effTier);
+        FUSION_NAMES.put(effTier, name);
+        MINIMUM_TIER = Math.min(effTier, MINIMUM_TIER);
     }
 
     public static Block getCasingState(int mk) {

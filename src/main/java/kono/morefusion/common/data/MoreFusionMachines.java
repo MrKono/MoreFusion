@@ -86,9 +86,11 @@ public class MoreFusionMachines {
                                                 .setMinGlobalLimited(1).setPreviewCount(16)))
                                 .where('C', casing)
                                 .where('K', coil)
-                                .where('O', casing.or(abilities(PartAbility.EXPORT_FLUIDS)))
+                                .where('O', casing.or(abilities(PartAbility.EXPORT_FLUIDS, PartAbility.EXPORT_ITEMS)))
                                 .where('A', air())
-                                .where('I', casing.or(abilities(PartAbility.IMPORT_FLUIDS).setMinGlobalLimited(2)))
+                                .where('I',
+                                        casing.or(abilities(PartAbility.IMPORT_FLUIDS).setMinGlobalLimited(2))
+                                                .or(abilities(PartAbility.IMPORT_ITEMS)))
                                 .where('#', any())
                                 .build();
                     })
@@ -123,14 +125,14 @@ public class MoreFusionMachines {
                                 .where('K', coil)
                                 .where('W', GTMachines.FLUID_EXPORT_HATCH[effTier], Direction.WEST)
                                 .where('E', GTMachines.FLUID_EXPORT_HATCH[effTier], Direction.EAST)
-                                .where('S', GTMachines.FLUID_EXPORT_HATCH[effTier], Direction.SOUTH)
-                                .where('N', GTMachines.FLUID_EXPORT_HATCH[effTier], Direction.NORTH)
+                                .where('S', GTMachines.ITEM_EXPORT_BUS[effTier], Direction.SOUTH)
+                                .where('N', GTMachines.ITEM_EXPORT_BUS[effTier], Direction.NORTH)
                                 .where('w', GTMachines.ENERGY_INPUT_HATCH[effTier], Direction.WEST)
                                 .where('e', GTMachines.ENERGY_INPUT_HATCH[effTier], Direction.EAST)
                                 .where('s', GTMachines.ENERGY_INPUT_HATCH[effTier], Direction.SOUTH)
                                 .where('n', GTMachines.ENERGY_INPUT_HATCH[effTier], Direction.NORTH)
                                 .where('U', GTMachines.FLUID_IMPORT_HATCH[effTier], Direction.UP)
-                                .where('D', GTMachines.FLUID_IMPORT_HATCH[effTier], Direction.DOWN)
+                                .where('D', GTMachines.ITEM_IMPORT_BUS[effTier], Direction.DOWN)
                                 .where('#', Blocks.AIR.defaultBlockState());
 
                         shapeInfos.add(baseBuilder.shallowCopy()

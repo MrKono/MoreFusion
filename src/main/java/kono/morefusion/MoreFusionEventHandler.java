@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.Mod;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
+import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 
 import kono.morefusion.api.MoreFusionValues;
 import kono.morefusion.common.data.MoreFusionMachines;
@@ -20,5 +21,7 @@ public class MoreFusionEventHandler {
 
     public static void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event) {
         MoreFusionRecipeTypes.init();
+        GTRecipeTypes.FUSION_RECIPES.onRecipeBuild(
+                (builder, provider) -> MoreFusionRecipeTypes.FUSION_RECIPES_MF.copyFrom(builder).save(provider));
     }
 }

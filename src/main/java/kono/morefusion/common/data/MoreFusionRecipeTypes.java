@@ -17,7 +17,7 @@ public class MoreFusionRecipeTypes {
     public static void init() {}
 
     public static final GTRecipeType FUSION_RECIPES_MF = GTRecipeTypes.register("fusion_reactor_mf", MULTIBLOCK)
-            .setMaxIOSize(0, 0, 4, 4)
+            .setMaxIOSize(4, 4, 4, 4)
             .setEUIO(IO.IN)
             .setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.ARC)
