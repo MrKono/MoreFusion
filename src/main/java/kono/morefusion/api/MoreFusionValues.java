@@ -4,8 +4,6 @@ import net.minecraft.resources.ResourceLocation;
 
 import kono.morefusion.MoreFusionConfig;
 
-import static kono.morefusion.api.MoreFusionUtils.*;
-
 public class MoreFusionValues {
 
     public static final MoreFusionConfig.cfgMk0 mk0 = MoreFusionConfig.INSTANCE.mk0;
@@ -21,7 +19,7 @@ public class MoreFusionValues {
 
     public static final String NAME = "MoreFusion";
 
-    public static ResourceLocation mrId(String name) {
+    public static ResourceLocation modId(String name) {
         return new ResourceLocation(MODID, name);
     }
 }

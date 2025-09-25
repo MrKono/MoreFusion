@@ -35,9 +35,14 @@ import static com.gregtechceu.gtceu.common.data.GTRecipeModifiers.DEFAULT_ENVIRO
 import static com.gregtechceu.gtceu.common.data.models.GTMachineModels.createWorkableCasingMachineModel;
 import static com.gregtechceu.gtceu.utils.FormattingUtil.toRomanNumeral;
 import static kono.morefusion.api.MoreFusionUtils.formatWithSIPrefix;
+import static kono.morefusion.common.data.MoreFusionCreativeTabs.MOREFUSION;
 import static kono.morefusion.common.data.MoreFusionRegistration.REGISTRATE;
 
 public class MoreFusionMachines {
+
+    static {
+        REGISTRATE.creativeModeTab(() -> MOREFUSION);
+    }
 
     public static void init() {}
 
