@@ -16,7 +16,7 @@ public class EnglishHandler extends LangHandler {
 
     public static void init(RegistrateLangProvider provider) {
         // Recipe Name
-        replace(provider, "gtceu.fusion_reactor_mf", "Fusion Reactor [MF]");
+        replace(provider, "gtceu.fusion_reactor_mf", "[MF] Fusion Reactor");
         // Tooltip
         provider.add("morefusion.machine.fusion_reactor.capacity", "§7Maximum Energy Storage: §e%s EU");
         provider.add("morefusion.multiblock.fusion_reactor_mf_description",
