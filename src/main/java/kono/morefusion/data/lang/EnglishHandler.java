@@ -1,13 +1,17 @@
 package kono.morefusion.data.lang;
 
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
 import com.gregtechceu.gtceu.data.lang.LangHandler;
 
+import dev.toma.configuration.Configuration;
+import dev.toma.configuration.config.format.ConfigFormats;
 import dev.toma.configuration.config.value.ConfigValue;
 import dev.toma.configuration.config.value.ObjectValue;
 
+import kono.morefusion.MoreFusionConfig;
 import kono.morefusion.api.MoreFusionValues;
 
 import com.tterrag.registrate.providers.RegistrateLangProvider;
@@ -23,6 +27,9 @@ public class EnglishHandler extends LangHandler {
                 "The [MF] Fusion Reactor MK %s is a large multiblock structure used for fusing elements into heavier ones. It can only use higher or equal %s Energy Hatch(es). For every Hatch it has, its buffer increases by %s EU, and has a maximum of %s.");
         provider.add("morefusion.machine.fusion_reactor_mf.hold_ctrl",
                 "Hold CTRL to display the value without a prefix.");
+        // Config
+        dfs(provider, new HashSet<>(),
+                Configuration.registerConfig(MoreFusionConfig.class, ConfigFormats.yaml()).getValueMap());
     }
 
     private static void dfs(RegistrateLangProvider provider, Set<String> added, Map<String, ConfigValue<?>> map) {
