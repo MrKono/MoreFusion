@@ -1,10 +1,14 @@
 {
-  "block.morefusion.iv_fusion_reactor_mf": "ɟW ɹoʇɔɐǝᴚ uoısnℲ ʌI",
-  "block.morefusion.luv_fusion_reactor_mf": "ɟW ɹoʇɔɐǝᴚ uoısnℲ ʌnꞀ",
-  "block.morefusion.uev_fusion_reactor_mf": "ɟW ɹoʇɔɐǝᴚ uoısnℲ ʌǝ∩",
-  "block.morefusion.uhv_fusion_reactor_mf": "ɟW ɹoʇɔɐǝᴚ uoısnℲ ʌɥ∩",
-  "block.morefusion.uiv_fusion_reactor_mf": "ɟW ɹoʇɔɐǝᴚ uoısnℲ ʌı∩",
-  "block.morefusion.uv_fusion_reactor_mf": "ɟW ɹoʇɔɐǝᴚ uoısnℲ ʌ∩",
-  "block.morefusion.uxv_fusion_reactor_mf": "ɟW ɹoʇɔɐǝᴚ uoısnℲ ʌx∩",
-  "block.morefusion.zpm_fusion_reactor_mf": "ɟW ɹoʇɔɐǝᴚ uoısnℲ ɯdZ"
+  "block.morefusion.iv_fusion_reactor_mf": "OᴚƎZ ʞW ɹǝʇndɯoƆ ɹoʇɔɐǝᴚ uoısnℲ ]ℲW[",
+  "block.morefusion.luv_fusion_reactor_mf": "I ʞW ɹǝʇndɯoƆ ɹoʇɔɐǝᴚ uoısnℲ ]ℲW[",
+  "block.morefusion.uev_fusion_reactor_mf": "Λ ʞW ɹǝʇndɯoƆ ɹoʇɔɐǝᴚ uoısnℲ ]ℲW[",
+  "block.morefusion.uhv_fusion_reactor_mf": "ΛI ʞW ɹǝʇndɯoƆ ɹoʇɔɐǝᴚ uoısnℲ ]ℲW[",
+  "block.morefusion.uiv_fusion_reactor_mf": "IΛ ʞW ɹǝʇndɯoƆ ɹoʇɔɐǝᴚ uoısnℲ ]ℲW[",
+  "block.morefusion.uv_fusion_reactor_mf": "III ʞW ɹǝʇndɯoƆ ɹoʇɔɐǝᴚ uoısnℲ ]ℲW[",
+  "block.morefusion.uxv_fusion_reactor_mf": "IIΛ ʞW ɹǝʇndɯoƆ ɹoʇɔɐǝᴚ uoısnℲ ]ℲW[",
+  "block.morefusion.zpm_fusion_reactor_mf": "II ʞW ɹǝʇndɯoƆ ɹoʇɔɐǝᴚ uoısnℲ ]ℲW[",
+  "gtceu.fusion_reactor_mf": "]ℲW[ ɹoʇɔɐǝᴚ uoısnℲ",
+  "morefusion.machine.fusion_reactor.capacity": "∩Ǝ %sǝ§ :ǝbɐɹoʇS ʎbɹǝuƎ ɯnɯıxɐWㄥ§",
+  "morefusion.machine.fusion_reactor_mf.hold_ctrl": "˙xıɟǝɹd ɐ ʇnoɥʇıʍ ǝnןɐʌ ǝɥʇ ʎɐןdsıp oʇ Ꞁᴚ⟘Ɔ pןoH",
+  "morefusion.multiblock.fusion_reactor_mf_description": "˙%s ɟo ɯnɯıxɐɯ ɐ sɐɥ puɐ '∩Ǝ %s ʎq sǝsɐǝɹɔuı ɹǝɟɟnq sʇı 'sɐɥ ʇı ɥɔʇɐH ʎɹǝʌǝ ɹoℲ ˙)sǝ(ɥɔʇɐH ʎbɹǝuƎ %s ןɐnbǝ ɹo ɹǝɥbıɥ ǝsn ʎןuo uɐɔ ʇI ˙sǝuo ɹǝıʌɐǝɥ oʇuı sʇuǝɯǝןǝ buısnɟ ɹoɟ pǝsn ǝɹnʇɔnɹʇs ʞɔoןqıʇןnɯ ǝbɹɐן ɐ sı %s ʞW ɹoʇɔɐǝᴚ uoısnℲ ]ℲW[ ǝɥ⟘"
 }

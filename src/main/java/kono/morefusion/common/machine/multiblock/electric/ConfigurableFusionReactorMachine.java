@@ -130,9 +130,9 @@ public class ConfigurableFusionReactorMachine extends FusionReactorMachine {
         int recipeTier = RecipeHelper.getPreOCRecipeEuTier(recipe);
         int fusionTier = findCeilingTier(euToStart);
         int tier = Math.max(MINIMUM_TIER, Math.max(recipeTier, fusionTier));
-        group.addWidget(new LabelWidget(-8, group.getSizeHeight() - 10,
+        group.addWidget(new LabelWidget(-2, group.getSizeHeight() - 10,
                 LocalizationUtils.format("gtceu.recipe.eu_to_start",
-                        FormattingUtil.formatNumberReadable2F(euToStart, false),
+                        formatWithSIPrefix(euToStart),
                         FUSION_NAMES.get(tier))));
     }
 
@@ -141,7 +141,8 @@ public class ConfigurableFusionReactorMachine extends FusionReactorMachine {
     //////////////////////////////////////
 
     public static long calculateEnergyStorageFactor(int mk, int energyInputAmount) {
-        return energyInputAmount * castHeat(MoreFusionUtils.cfgMk(mk).heat(), (long) Math.pow(2, (mk - 1)) * 1000000);
+        return (long) energyInputAmount *
+                castHeat(MoreFusionUtils.cfgMk(mk).heat(), (long) Math.pow(2, (mk - 1)) * 1000000);
     }
 
     private static int findCeilingTier(long euToStart) {

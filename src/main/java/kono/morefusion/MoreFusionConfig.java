@@ -45,7 +45,8 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Base Heat value\" of Fusion Reactor Mk0.",
-                "Calculation formula: Heat = baseHeatMk0 * energyHatchAmount", "Default: 5000000" })
+                "Calculation formula: Heat = baseHeatMk0 * energyHatchAmount", "Default: 5000000", "Min: 1",
+                "Max: 576460752303423487" })
         public String heatMk0 = "5000000";
 
         @Configurable
@@ -80,7 +81,8 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Base Heat value\" of Fusion Reactor Mk1.",
-                "Calculation formula: Heat = baseHeatMk1 * energyHatchAmount", "Default: 10000000" })
+                "Calculation formula: Heat = baseHeatMk1 * energyHatchAmount", "Default: 10000000", "Min: 1",
+                "Max: 576460752303423487" })
         public String heatMk1 = "10000000";
 
         @Configurable
@@ -115,7 +117,8 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Base Heat value\" of Fusion Reactor Mk2.",
-                "Calculation formula: Heat = baseHeatMk2 * energyHatchAmount", "Default: 20000000" })
+                "Calculation formula: Heat = baseHeatMk2 * energyHatchAmount", "Default: 20000000", "Min: 1",
+                "Max: 576460752303423487" })
         public String heatMk2 = "20000000";
 
         @Configurable
@@ -150,7 +153,8 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Base Heat value\" of Fusion Reactor Mk3.",
-                "Calculation formula: Heat = baseHeatMk3 * energyHatchAmount", "Default: 40000000" })
+                "Calculation formula: Heat = baseHeatMk3 * energyHatchAmount", "Default: 40000000", "Min: 1",
+                "Max: 576460752303423487" })
         public String heatMk3 = "40000000";
 
         @Configurable
@@ -185,7 +189,8 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Base Heat value\" of Fusion Reactor Mk4.",
-                "Calculation formula: Heat = baseHeatMk4 * energyHatchAmount", "Default: 80000000" })
+                "Calculation formula: Heat = baseHeatMk4 * energyHatchAmount", "Default: 80000000", "Min: 1",
+                "Max: 576460752303423487" })
         public String heatMk4 = "80000000";
 
         @Configurable
@@ -220,7 +225,8 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Base Heat value\" of Fusion Reactor Mk5.",
-                "Calculation formula: Heat = baseHeatMk5 * energyHatchAmount", "Default: 160000000" })
+                "Calculation formula: Heat = baseHeatMk5 * energyHatchAmount", "Default: 160000000", "Min: 1",
+                "Max: 576460752303423487" })
         public String heatMk5 = "160000000";
 
         @Configurable
@@ -255,7 +261,8 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Base Heat value\" of Fusion Reactor Mk6.",
-                "Calculation formula: Heat = baseHeatMk6 * energyHatchAmount", "Default: 320000000" })
+                "Calculation formula: Heat = baseHeatMk6 * energyHatchAmount", "Default: 320000000", "Min: 1",
+                "Max: 576460752303423487" })
         public String heatMk6 = "320000000";
 
         @Configurable
@@ -290,7 +297,8 @@ public class MoreFusionConfig {
 
         @Configurable
         @Configurable.Comment({ "Configure the \"Base Heat value\" of Fusion Reactor Mk7.",
-                "Calculation formula: Heat = baseHeatMk7 * energyHatchAmount", "Default: 640000000" })
+                "Calculation formula: Heat = baseHeatMk7 * energyHatchAmount", "Default: 640000000", "Min: 1",
+                "Max: 576460752303423487" })
         public String heatMk7 = "640000000";
 
         @Configurable

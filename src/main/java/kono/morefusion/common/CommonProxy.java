@@ -6,6 +6,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import kono.morefusion.MoreFusionConfig;
 import kono.morefusion.common.data.MoreFusionRegistration;
 import kono.morefusion.common.machine.multiblock.electric.ConfigurableFusionReactorMachine;
+import kono.morefusion.data.MoreFusionDataGen;
 
 public class CommonProxy {
 
@@ -18,14 +19,15 @@ public class CommonProxy {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MoreFusionRegistration.REGISTRATE.registerRegistrate();
         MoreFusionConfig.init();
+        MoreFusionDataGen.init();
 
-        ConfigurableFusionReactorMachine.registerFusionTier(0, "(Mk0)");
-        ConfigurableFusionReactorMachine.registerFusionTier(1, "(MkI)");
-        ConfigurableFusionReactorMachine.registerFusionTier(2, "(MkII)");
-        ConfigurableFusionReactorMachine.registerFusionTier(3, "(MkIII)");
-        ConfigurableFusionReactorMachine.registerFusionTier(4, "(MkIV)");
-        ConfigurableFusionReactorMachine.registerFusionTier(5, "(MkV)");
-        ConfigurableFusionReactorMachine.registerFusionTier(6, "(MkVI)");
-        ConfigurableFusionReactorMachine.registerFusionTier(7, "(MkVII)");
+        ConfigurableFusionReactorMachine.registerFusionTier(0, " (Mk ZERO)");
+        ConfigurableFusionReactorMachine.registerFusionTier(1, " (Mk I)");
+        ConfigurableFusionReactorMachine.registerFusionTier(2, " (Mk II)");
+        ConfigurableFusionReactorMachine.registerFusionTier(3, " (Mk III)");
+        ConfigurableFusionReactorMachine.registerFusionTier(4, " (Mk IV)");
+        ConfigurableFusionReactorMachine.registerFusionTier(5, " (Mk V)");
+        ConfigurableFusionReactorMachine.registerFusionTier(6, " (Mk VI)");
+        ConfigurableFusionReactorMachine.registerFusionTier(7, " (Mk VII)");
     }
 }

@@ -24,6 +24,7 @@ import com.gregtechceu.gtceu.api.pattern.MultiblockShapeInfo;
 import com.gregtechceu.gtceu.api.registry.registrate.MultiblockMachineBuilder;
 import com.gregtechceu.gtceu.client.renderer.machine.DynamicRenderHelper;
 import com.gregtechceu.gtceu.common.data.GTMachines;
+import com.gregtechceu.gtceu.utils.GTUtil;
 
 import kono.morefusion.common.machine.multiblock.electric.ConfigurableFusionReactorMachine;
 
@@ -32,6 +33,8 @@ import static com.gregtechceu.gtceu.api.pattern.Predicates.*;
 import static com.gregtechceu.gtceu.common.data.GTRecipeModifiers.BATCH_MODE;
 import static com.gregtechceu.gtceu.common.data.GTRecipeModifiers.DEFAULT_ENVIRONMENT_REQUIREMENT;
 import static com.gregtechceu.gtceu.common.data.models.GTMachineModels.createWorkableCasingMachineModel;
+import static com.gregtechceu.gtceu.utils.FormattingUtil.toRomanNumeral;
+import static kono.morefusion.api.MoreFusionUtils.formatWithSIPrefix;
 import static kono.morefusion.common.data.MoreFusionRegistration.REGISTRATE;
 
 public class MoreFusionMachines {
@@ -41,17 +44,39 @@ public class MoreFusionMachines {
     public static final MultiblockMachineDefinition[] FUSION_REACTOR_NF = registerTieredMultis("fusion_reactor_mf",
             ConfigurableFusionReactorMachine::new, (idTier, builder) -> builder
                     .rotationState(RotationState.ALL)
+                    .langValue("[MF] Fusion Reactor Computer MK %s"
+                            .formatted(idTier == GTValues.IV ? "ZERO" : toRomanNumeral(idTier - GTValues.IV)))
                     .recipeType(MoreFusionRecipeTypes.FUSION_RECIPES_MF)
                     .recipeModifiers(DEFAULT_ENVIRONMENT_REQUIREMENT,
                             ConfigurableFusionReactorMachine::recipeModifier, BATCH_MODE)
-                    .tooltips(
-                            Component.translatable("gtceu.machine.fusion_reactor.capacity",
+                    .tooltipBuilder((stack, tooltip) -> {
+                        if (GTUtil.isCtrlDown()) {
+                            tooltip.add(Component.translatable("morefusion.machine.fusion_reactor.capacity",
                                     ConfigurableFusionReactorMachine.calculateEnergyStorageFactor(
-                                            Math.max(0, idTier - GTValues.IV),
-                                            16) / 1000000L),
-                            Component.translatable("gtceu.machine.fusion_reactor.overclocking"),
-                            Component.translatable("gtceu.multiblock.%s_fusion_reactor.description"
-                                    .formatted(VN[idTier].toLowerCase(Locale.ROOT))))
+                                            Math.max(0, idTier - GTValues.IV), 16)));
+                            tooltip.add(Component.translatable("gtceu.machine.fusion_reactor.overclocking"));
+                            tooltip.add(Component.translatable("morefusion.multiblock.fusion_reactor_mf_description",
+                                    idTier - IV,
+                                    VN[ConfigurableFusionReactorMachine.getFusionTier(idTier - IV)],
+                                    ConfigurableFusionReactorMachine
+                                            .calculateEnergyStorageFactor(Math.max(0, idTier - GTValues.IV), 1),
+                                    ConfigurableFusionReactorMachine
+                                            .calculateEnergyStorageFactor(Math.max(0, idTier - GTValues.IV), 16)));
+                        } else {
+                            tooltip.add(Component.translatable("morefusion.machine.fusion_reactor.capacity",
+                                    formatWithSIPrefix(ConfigurableFusionReactorMachine.calculateEnergyStorageFactor(
+                                            Math.max(0, idTier - GTValues.IV), 16))));
+                            tooltip.add(Component.translatable("gtceu.machine.fusion_reactor.overclocking"));
+                            tooltip.add(Component.translatable("morefusion.multiblock.fusion_reactor_mf_description",
+                                    idTier - IV,
+                                    VN[ConfigurableFusionReactorMachine.getFusionTier(idTier - IV)],
+                                    formatWithSIPrefix(ConfigurableFusionReactorMachine
+                                            .calculateEnergyStorageFactor(Math.max(0, idTier - GTValues.IV), 1)),
+                                    formatWithSIPrefix(ConfigurableFusionReactorMachine
+                                            .calculateEnergyStorageFactor(Math.max(0, idTier - GTValues.IV), 16))));
+                            tooltip.add(Component.translatable("morefusion.machine.fusion_reactor_mf.hold_ctrl"));
+                        }
+                    })
                     .appearanceBlock(
                             () -> ConfigurableFusionReactorMachine.getCasingState(Math.max(0, idTier - GTValues.IV)))
                     .pattern((definition) -> {

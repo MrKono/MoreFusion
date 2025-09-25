@@ -1,10 +1,14 @@
 {
-  "block.morefusion.iv_fusion_reactor_mf": "Iv Fusion Reactor Mf",
-  "block.morefusion.luv_fusion_reactor_mf": "Luv Fusion Reactor Mf",
-  "block.morefusion.uev_fusion_reactor_mf": "Uev Fusion Reactor Mf",
-  "block.morefusion.uhv_fusion_reactor_mf": "Uhv Fusion Reactor Mf",
-  "block.morefusion.uiv_fusion_reactor_mf": "Uiv Fusion Reactor Mf",
-  "block.morefusion.uv_fusion_reactor_mf": "Uv Fusion Reactor Mf",
-  "block.morefusion.uxv_fusion_reactor_mf": "Uxv Fusion Reactor Mf",
-  "block.morefusion.zpm_fusion_reactor_mf": "Zpm Fusion Reactor Mf"
+  "block.morefusion.iv_fusion_reactor_mf": "[MF] Fusion Reactor Computer MK ZERO",
+  "block.morefusion.luv_fusion_reactor_mf": "[MF] Fusion Reactor Computer MK I",
+  "block.morefusion.uev_fusion_reactor_mf": "[MF] Fusion Reactor Computer MK V",
+  "block.morefusion.uhv_fusion_reactor_mf": "[MF] Fusion Reactor Computer MK IV",
+  "block.morefusion.uiv_fusion_reactor_mf": "[MF] Fusion Reactor Computer MK VI",
+  "block.morefusion.uv_fusion_reactor_mf": "[MF] Fusion Reactor Computer MK III",
+  "block.morefusion.uxv_fusion_reactor_mf": "[MF] Fusion Reactor Computer MK VII",
+  "block.morefusion.zpm_fusion_reactor_mf": "[MF] Fusion Reactor Computer MK II",
+  "gtceu.fusion_reactor_mf": "Fusion Reactor [MF]",
+  "morefusion.machine.fusion_reactor.capacity": "§7Maximum Energy Storage: §e%s EU",
+  "morefusion.machine.fusion_reactor_mf.hold_ctrl": "Hold CTRL to display the value without a prefix.",
+  "morefusion.multiblock.fusion_reactor_mf_description": "The [MF] Fusion Reactor MK %s is a large multiblock structure used for fusing elements into heavier ones. It can only use higher or equal %s Energy Hatch(es). For every Hatch it has, its buffer increases by %s EU, and has a maximum of %s."
 }
