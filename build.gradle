@@ -172,13 +172,13 @@ repositories {
             includeGroup("com.simibubi.create")
        }
    }
-//    maven {
-//        // saps.dev Maven (KubeJS and Rhino)
-//        url = "https://maven.saps.dev/minecraft"
-//        content {
-//            includeGroup "dev.latvian.mods"
-//        }
-//    }
+    maven {
+        // saps.dev Maven (KubeJS and Rhino)
+        url = "https://maven.saps.dev/minecraft"
+        content {
+            includeGroup "dev.latvian.mods"
+        }
+    }
     maven {
         url "https://cursemaven.com"
         content {
@@ -229,6 +229,11 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-1.20.1-common-api:15.20.0.105")
     compileOnly fg.deobf("mezz.jei:jei-1.20.1-forge-api:15.20.0.105")
     runtimeOnly fg.deobf("mezz.jei:jei-1.20.1-forge:15.20.0.105") { transitive = false }
+
+    // KubeJs
+    implementation fg.deobf("curse.maven:kubejs-238086:5853326")
+    implementation fg.deobf("curse.maven:rhino-416294:6186971")
+    implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
 
 
     compileOnly 'org.projectlombok:lombok:1.18.30'
