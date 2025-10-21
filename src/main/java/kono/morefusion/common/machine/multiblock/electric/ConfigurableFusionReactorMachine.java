@@ -1,11 +1,14 @@
 package kono.morefusion.common.machine.multiblock.electric;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 
@@ -13,9 +16,14 @@ import org.jetbrains.annotations.NotNull;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
+import com.gregtechceu.gtceu.api.capability.IEnergyContainer;
+import com.gregtechceu.gtceu.api.capability.recipe.EURecipeCapability;
+import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
+import com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiPart;
 import com.gregtechceu.gtceu.api.machine.trait.NotifiableEnergyContainer;
+import com.gregtechceu.gtceu.api.misc.EnergyContainerList;
 import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.api.recipe.RecipeHelper;
 import com.gregtechceu.gtceu.api.recipe.modifier.ModifierFunction;
@@ -40,6 +48,8 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2IntAVLTreeMap;
 import it.unimi.dsi.fastutil.longs.Long2IntSortedMap;
+import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
+import it.unimi.dsi.fastutil.longs.Long2ObjectMaps;
 import lombok.Getter;
 
 @ParametersAreNonnullByDefault
@@ -48,7 +58,7 @@ public class ConfigurableFusionReactorMachine extends FusionReactorMachine {
 
     @Getter
     private final int mk;
-    private final int effTier;
+    private final int tier;
 
     @Persisted
     protected long heat = 0;
@@ -63,9 +73,9 @@ public class ConfigurableFusionReactorMachine extends FusionReactorMachine {
     private static int MINIMUM_TIER = MAX;
 
     public ConfigurableFusionReactorMachine(IMachineBlockEntity holder, int idTier) {
-        super(holder, Math.max(0, idTier - IV));
+        super(holder, Math.max(0, idTier - GTValues.IV));
         this.mk = Math.max(0, idTier - GTValues.IV);
-        this.effTier = getFusionTier(mk);
+        this.tier = getFusionTier(mk);
         this.energyContainer = createEnergyContainer();
     }
 
@@ -73,14 +83,17 @@ public class ConfigurableFusionReactorMachine extends FusionReactorMachine {
         return tierMoreFusion(cfgMk(mk).tier(), mk + IV);
     }
 
-    @Override
-    public int getTier() {
-        return effTier;
+    public NotifiableEnergyContainer createEnergyContainer() {
+        // create an internal energy container for temp storage. its capacity is decided when the structure formed.
+        // it doesn't provide any capability of all sides, but null for the goggles mod to check it storages.
+        var container = new NotifiableEnergyContainer(this, 0, 0, 0, 0, 0);
+        container.setCapabilityValidator(Objects::isNull);
+        return container;
     }
 
     @Override
     public long getMaxVoltage() {
-        return Math.min(GTValues.V[effTier], super.getMaxVoltage());
+        return Math.min(GTValues.V[tier], super.getMaxVoltage());
     }
 
     public static ModifierFunction recipeModifier(@NotNull MetaMachine machine, @NotNull GTRecipe recipe) {
@@ -116,11 +129,20 @@ public class ConfigurableFusionReactorMachine extends FusionReactorMachine {
     @Override
     public void addDisplayText(List<Component> textList) {
         super.addDisplayText(textList);
+        textList.removeIf(c -> hasKey(c, "gtceu.multiblock.fusion_reactor.energy") ||
+                hasKey(c, "gtceu.multiblock.fusion_reactor.heat"));
         if (isFormed()) {
             textList.add(Component.translatable("gtceu.multiblock.fusion_reactor.energy",
                     this.energyContainer.getEnergyStored(), this.energyContainer.getEnergyCapacity()));
             textList.add(Component.translatable("gtceu.multiblock.fusion_reactor.heat", heat));
         }
+    }
+
+    private static boolean hasKey(Component c, String key) {
+        if (c.getContents() instanceof TranslatableContents tc) {
+            return tc.getKey().equals(key);
+        }
+        return false;
     }
 
     public static void addEUToStartLabel(GTRecipe recipe, WidgetGroup group) {
@@ -133,6 +155,32 @@ public class ConfigurableFusionReactorMachine extends FusionReactorMachine {
                 LocalizationUtils.format("gtceu.recipe.eu_to_start",
                         formatWithSIPrefix(euToStart),
                         FUSION_NAMES.get(tier))));
+    }
+
+    @Override
+    public void onStructureFormed() {
+        super.onStructureFormed();
+        // capture all energy containers
+        List<IEnergyContainer> energyContainers = new ArrayList<>();
+        Long2ObjectMap<IO> ioMap = getMultiblockState().getMatchContext().getOrCreate("ioMap",
+                Long2ObjectMaps::emptyMap);
+        for (IMultiPart part : getParts()) {
+            IO io = ioMap.getOrDefault(part.self().getPos().asLong(), IO.BOTH);
+            if (io == IO.NONE || io == IO.OUT) continue;
+            var handlerLists = part.getRecipeHandlers();
+            for (var handlerList : handlerLists) {
+                if (!handlerList.isValid(io)) continue;
+
+                handlerList.getCapability(EURecipeCapability.CAP).stream()
+                        .filter(IEnergyContainer.class::isInstance)
+                        .map(IEnergyContainer.class::cast)
+                        .forEach(energyContainers::add);
+                traitSubscriptions.add(handlerList.subscribe(this::updatePreHeatSubscription, EURecipeCapability.CAP));
+            }
+        }
+        this.inputEnergyContainers = new EnergyContainerList(energyContainers);
+        energyContainer.resetBasicInfo(calculateEnergyStorageFactor(mk, energyContainers.size()), 0, 0, 0, 0);
+        updatePreHeatSubscription();
     }
 
     //////////////////////////////////////
