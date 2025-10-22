@@ -9,8 +9,6 @@ import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
 import com.gregtechceu.gtceu.api.machine.multiblock.MultiblockControllerMachine;
 import com.gregtechceu.gtceu.api.registry.registrate.MultiblockMachineBuilder;
 
-import static com.gregtechceu.gtceu.api.GTValues.*;
-import static com.gregtechceu.gtceu.api.pattern.Predicates.*;
 import static kono.morefusion.common.data.MoreFusionRegistration.REGISTRATE;
 
 public class MoreFusionMachines {
