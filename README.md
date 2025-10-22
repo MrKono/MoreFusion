@@ -9,6 +9,7 @@ This mod is a very simple GTCEu add-on that adds unique FusionReactor by using K
 You can include this mod in your modpack!
 
 ### How to add unique FusionReactor
+See [Here](https://github.com/MrKono/MoreFusion/blob/master/kubejs/HowToAddFusionReactor.md).
 
 
 ## Credits

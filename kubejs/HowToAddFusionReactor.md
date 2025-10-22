@@ -1,5 +1,5 @@
 ## How to add unique FusionReactors
-(_See example.js for the full script._)
+(_See [example.js](https://github.com/MrKono/MoreFusion/blob/master/kubejs/startup_scripts/example.js) for the full script._)
 ### Code Explanation
 To register a unique FusionReactor, use the following unique function:
 ``` js
@@ -30,7 +30,7 @@ Predicates.blocks(CustomFusionReactorMachine.rangedEnergyHatch(start, end))
 - The EnergyHatch is only available between `start` and `end` tier.
 
 ## Tooltip
-(_See tooltip.js for the full script._)
+(_See [tooltip.js](https://github.com/MrKono/MoreFusion/blob/master/kubejs/client_scripts/tooltip.js) for the full script._)
 ```js
 MoreFusionUtil.formatWithSIPrefix(value)
 ```
