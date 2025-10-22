@@ -1,14 +1,4 @@
 {
-  "block.morefusion.iv_fusion_reactor_mf": "[MF] 核融合炉 MK ZERO",
-  "block.morefusion.luv_fusion_reactor_mf": "[MF] 核融合炉 MK I",
-  "block.morefusion.uev_fusion_reactor_mf": "[MF] 核融合炉 MK V",
-  "block.morefusion.uhv_fusion_reactor_mf": "[MF] 核融合炉 MK IV",
-  "block.morefusion.uiv_fusion_reactor_mf": "[MF] 核融合炉 MK VI",
-  "block.morefusion.uv_fusion_reactor_mf": "[MF] 核融合炉 MK III",
-  "block.morefusion.uxv_fusion_reactor_mf": "[MF] 核融合炉 MK VII",
-  "block.morefusion.zpm_fusion_reactor_mf": "[MF] 核融合炉 MK II",
   "gtceu.fusion_reactor_mf": "[MF] 核融合炉",
-  "morefusion.machine.fusion_reactor.capacity": "§7最大蓄電量: §e%s EU",
-  "morefusion.machine.fusion_reactor_mf.hold_ctrl": "CTRLを押すと接頭辞 (M, G等) なしの値を表示",
-  "morefusion.multiblock.fusion_reactor_mf_description": "[MF] 核融合炉 MK %sは、元素をより重い元素に融合するために使われる大型マルチブロック機械です。この機械には、%s以上のエナジーハッチのみが使用できます。ハッチごとに、バッファが%s EU増加します。最大開始エネルギーは%sEUです。"
+  "morefusion.machine.fusion_reactor.capacity": "§7最大蓄電量: §e%s EU"
 }
