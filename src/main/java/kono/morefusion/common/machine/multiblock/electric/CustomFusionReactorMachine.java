@@ -93,11 +93,6 @@ public class CustomFusionReactorMachine extends WorkableElectricMultiblockMachin
         this.baseHeat = baseHeat;
         this.energyHatchAmount = 16;
         registerFusionTier(tier, tierName);
-        /*
-         * long maxEU = calculateEnergyStorageFactor(tier, baseHeat, 16);
-         * FUSION_ENERGY.put(maxEU, tier);
-         * FUSION_NAMES.put(tier, tierName);
-         */
     }
 
     public CustomFusionReactorMachine(IMachineBlockEntity holder, int tier, @NotNull String tierName, long baseHeat,
@@ -109,11 +104,6 @@ public class CustomFusionReactorMachine extends WorkableElectricMultiblockMachin
         this.energyHatchAmount = energyHatchAmount;
 
         registerFusionTier(tier, tierName);
-        /*
-         * long maxEU = calculateEnergyStorageFactor(tier, baseHeat, energyHatchAmount);
-         * FUSION_ENERGY.put(maxEU, tier);
-         * FUSION_NAMES.put(tier, tierName);
-         */
     }
 
     // Initialization
