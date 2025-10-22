@@ -8,7 +8,7 @@ import com.gregtechceu.gtceu.common.data.GTSoundEntries;
 
 import com.lowdragmc.lowdraglib.gui.texture.ProgressTexture;
 
-import kono.morefusion.common.machine.multiblock.electric.ConfigurableFusionReactorMachine;
+import kono.morefusion.common.machine.multiblock.electric.CustomFusionReactorMachine;
 
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK;
 
@@ -24,5 +24,5 @@ public class MoreFusionRecipeTypes {
             .setOffsetVoltageText(true)
             .setMaxTooltips(4)
             .setSmallRecipeMap(GTRecipeTypes.FUSION_RECIPES)
-            .setUiBuilder(ConfigurableFusionReactorMachine::addEUToStartLabel);
+            .setUiBuilder(CustomFusionReactorMachine::addEUToStartLabel);
 }
